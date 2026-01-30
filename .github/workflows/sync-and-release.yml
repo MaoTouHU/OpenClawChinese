@@ -21,6 +21,10 @@ env:
   UPSTREAM_REPO: openclaw/openclaw
   NODE_VERSION: '22'
 
+permissions:
+  contents: write
+  packages: write
+
 jobs:
   # ==================== 检测上游更新 ====================
   check-upstream:
