@@ -27,9 +27,12 @@
       "commands/helpers.json",
       "commands/doctor.json",
       "commands/doctor-security.json",
+      "commands/doctor-workspace-status.json",
       "commands/status.json",
       "commands/update.json",
       "commands/skills.json",
+      "commands/onboard-skills.json",
+      "commands/plugin-install.json",
       "commands/channels.json",
       "commands/uninstall.json"
     ],
