@@ -267,6 +267,16 @@ jobs:
           platforms: linux/amd64,linux/arm64
         continue-on-error: true
 
+      - name: 设置 Docker 镜像为公开
+        run: |
+          echo "🔓 设置 Docker 镜像可见性为 public..."
+          curl -X PATCH \
+            -H "Authorization: Bearer ${{ secrets.GITHUB_TOKEN }}" \
+            -H "Accept: application/vnd.github.v3+json" \
+            https://api.github.com/user/packages/container/openclaw-zh/versions \
+            -d '{"visibility":"public"}' || true
+        continue-on-error: true
+
       - name: 构建摘要
         run: |
           echo "## 🌙 Nightly 构建完成" >> $GITHUB_STEP_SUMMARY
