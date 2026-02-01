@@ -405,21 +405,43 @@
     console.log('[OpenClaw 汉化版] 功能面板已加载');
   }
 
+  // 全局标记，防止重复初始化
+  let panelInitialized = false;
+  let observer = null;
+
+  // 带防抖的初始化包装器
+  let initTimeout = null;
+  function debouncedInit() {
+    if (panelInitialized) return;
+    if (initTimeout) clearTimeout(initTimeout);
+    initTimeout = setTimeout(() => {
+      if (!panelInitialized && !document.querySelector('.panel-trigger') && document.querySelector('.topbar-status')) {
+        initPanel();
+        panelInitialized = true;
+        // 初始化成功后断开 observer
+        if (observer) {
+          observer.disconnect();
+          observer = null;
+        }
+      }
+    }, 100);
+  }
+
   // 等待 DOM 加载完成
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initPanel);
+    document.addEventListener('DOMContentLoaded', debouncedInit);
   } else {
     // DOM 已加载，但可能 Dashboard 还没渲染完成
-    setTimeout(initPanel, 500);
+    setTimeout(debouncedInit, 500);
   }
 
   // 如果 Dashboard 是 SPA，监听路由变化后重新初始化
-  const observer = new MutationObserver((mutations) => {
-    if (!document.querySelector('.panel-trigger') && document.querySelector('.topbar-status')) {
-      initPanel();
-    }
-  });
-
-  observer.observe(document.body, { childList: true, subtree: true });
+  // 只在未初始化时创建 observer
+  if (!panelInitialized && !observer) {
+    observer = new MutationObserver((mutations) => {
+      debouncedInit();
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+  }
 
 })();
