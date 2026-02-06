@@ -598,56 +598,39 @@
             }
         }
 
-        /* 紧急公告横幅 */
+        /* 公告提示条 */
         .announce-bar {
-            background: linear-gradient(90deg, #b91c1c 0%, #dc2626 50%, #b91c1c 100%);
-            color: #fff;
+            background: rgba(39, 39, 42, 0.8);
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
             text-align: center;
-            padding: 10px 16px;
-            font-size: 0.9rem;
+            padding: 6px 16px;
+            font-size: 0.8rem;
             line-height: 1.5;
-            position: relative;
             z-index: 1001;
         }
         .announce-bar a {
-            color: #fef08a;
-            text-decoration: underline;
-            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
         }
         .announce-bar a:hover {
-            color: #fff;
+            text-decoration: underline;
         }
         .announce-bar code {
-            background: rgba(255,255,255,0.2);
-            padding: 1px 6px;
+            background: rgba(255,255,255,0.08);
+            padding: 1px 5px;
             border-radius: 3px;
             font-size: 0.85em;
-        }
-        .announce-bar .close-btn {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            background: none;
-            border: none;
-            color: #fecaca;
-            font-size: 1.2rem;
-            cursor: pointer;
-            padding: 4px 8px;
-        }
-        .announce-bar .close-btn:hover {
-            color: #fff;
+            color: var(--text-primary);
         }
     </style>
 </head>
 <body>
     <div class="bg-gradient"></div>
 
-    <!-- 紧急公告 -->
-    <div class="announce-bar" id="announceBar">
-        ⚠️ <strong>旧版 Bug 修复</strong>：<code>2026.2.4-zh.1</code> 及更早版本存在 <code>Missing workspace template</code> 错误，请升级：<code>npm install -g @qingchencloud/openclaw-zh@latest</code>
-        &nbsp;·&nbsp;<a href="FAQ.md#missing-workspace-template-agentsmd">详情</a>
-        <button class="close-btn" onclick="document.getElementById('announceBar').style.display='none'" title="关闭">×</button>
+    <!-- 公告 -->
+    <div class="announce-bar">
+        旧版用户遇到 <code>Missing workspace template</code>？请升级：<code>npm install -g @qingchencloud/openclaw-zh@latest</code> · <a href="FAQ.md#missing-workspace-template-agentsmd">查看详情</a>
     </div>
 
     <!-- 导航 -->
