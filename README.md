@@ -214,17 +214,6 @@ npm install -g @qingchencloud/openclaw-updater
 
 访问 [插件市场](https://openclaw.qt.cool/) 获取更多插件。
 
----
-
-## 微信交流群
-
-<p align="center">
-  <img src="docs/image/wx_01.png" alt="微信交流1群" width="200px">
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="docs/image/wx_02.png" alt="微信交流2群" width="200px">
-  <br>
-  <em>1群即将满员，请优先扫码加入2群 | 碰到问题也可以直接在群内反馈</em>
-</p>
 
 ---
 
