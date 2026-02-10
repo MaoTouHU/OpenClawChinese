@@ -1,0 +1,31 @@
+{
+  "file": "src/cli/program/register.subclis.ts",
+  "description": "CLI 子命令列表说明",
+  "replacements": {
+    "Agent Control Protocol tools": "Agent 控制协议 (ACP) 工具",
+    "Gateway control": "网关控制",
+    "Gateway service (legacy alias)": "网关服务（旧版别名）",
+    "Gateway logs": "网关日志",
+    "System events, heartbeat, and presence": "系统事件、心跳与在线状态",
+    "Model configuration": "模型配置",
+    "Exec approvals": "执行审批",
+    "Node commands": "节点命令",
+    "Device pairing + token management": "设备配对与令牌管理",
+    "Node control": "节点控制",
+    "Sandbox tools": "沙箱工具",
+    "Terminal UI": "终端界面 (TUI)",
+    "Cron scheduler": "定时任务调度",
+    "DNS helpers": "DNS 工具",
+    "Docs helpers": "文档工具",
+    "Hooks tooling": "Hooks 工具",
+    "Webhook helpers": "Webhook 工具",
+    "Pairing helpers": "配对工具",
+    "Plugin management": "插件管理",
+    "Channel management": "渠道管理",
+    "Directory commands": "目录命令",
+    "Security helpers": "安全工具",
+    "Skills management": "技能管理",
+    "CLI update helpers": "CLI 更新工具",
+    "Generate shell completion script": "生成 Shell 补全脚本"
+  }
+}

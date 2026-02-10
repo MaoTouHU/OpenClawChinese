@@ -12,6 +12,7 @@
       "cli/banner.json",
       "cli/tagline.json",
       "cli/help.json",
+      "cli/commands.json",
       "cli/models-cli.json"
     ],
     "wizard": [
