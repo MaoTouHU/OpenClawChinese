@@ -1218,6 +1218,175 @@
             .md-doc-title { display: none; }
             .md-body { padding: 20px 16px; }
         }
+
+        /* ClawPanel 引流板块 */
+        .promo-section {
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        .promo-card {
+            position: relative;
+            background: linear-gradient(135deg, rgba(59,130,246,0.08), rgba(168,85,247,0.08), rgba(220,38,38,0.06));
+            border: 1px solid rgba(59,130,246,0.2);
+            border-radius: 24px;
+            padding: 48px;
+            display: flex;
+            gap: 48px;
+            align-items: center;
+            backdrop-filter: blur(16px);
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .promo-card:hover {
+            border-color: rgba(59,130,246,0.4);
+            box-shadow: 0 20px 60px rgba(59,130,246,0.1);
+        }
+        .promo-card::before {
+            content: '';
+            position: absolute;
+            top: -50%; right: -20%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(59,130,246,0.1), transparent 70%);
+            pointer-events: none;
+        }
+        .promo-info { flex: 1; position: relative; z-index: 1; }
+        .promo-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            background: rgba(59,130,246,0.15);
+            border: 1px solid rgba(59,130,246,0.25);
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            color: var(--blue);
+            margin-bottom: 16px;
+            font-weight: 600;
+        }
+        .promo-info h2 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 800;
+            margin-bottom: 12px;
+            letter-spacing: -0.02em;
+        }
+        .promo-info h2 span {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .promo-desc {
+            color: var(--text-secondary);
+            font-size: 1rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        .promo-features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-bottom: 28px;
+        }
+        .promo-feat {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.88rem;
+            color: var(--text-secondary);
+        }
+        .promo-feat-icon {
+            width: 28px; height: 28px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+        }
+        .promo-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+        .btn-promo {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 11px 24px;
+            border-radius: 12px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        .btn-promo-primary {
+            background: linear-gradient(135deg, var(--blue), var(--purple));
+            color: white;
+            box-shadow: 0 4px 20px rgba(59,130,246,0.3);
+        }
+        .btn-promo-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 32px rgba(59,130,246,0.4);
+        }
+        .btn-promo-secondary {
+            background: var(--bg-card);
+            color: var(--text-primary);
+            border: 1px solid var(--border-highlight);
+        }
+        .btn-promo-secondary:hover {
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+        .promo-preview {
+            flex-shrink: 0;
+            width: 340px;
+            position: relative;
+            z-index: 1;
+        }
+        .promo-preview-frame {
+            background: rgba(0,0,0,0.4);
+            border: 1px solid var(--border-highlight);
+            border-radius: 16px;
+            padding: 8px;
+            box-shadow: 0 16px 48px rgba(0,0,0,0.2);
+            transition: transform 0.4s;
+        }
+        :root.light .promo-preview-frame {
+            background: rgba(255,255,255,0.6);
+        }
+        .promo-preview-frame:hover {
+            transform: translateY(-4px) scale(1.02);
+        }
+        .promo-preview-frame img {
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+        .promo-platform-tags {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-top: 14px;
+        }
+        .promo-platform-tag {
+            font-size: 0.78rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        @media (max-width: 768px) {
+            .promo-card {
+                flex-direction: column;
+                padding: 32px 24px;
+                gap: 28px;
+            }
+            .promo-preview { width: 100%; max-width: 340px; }
+            .promo-features { grid-template-columns: 1fr; }
+        }
 </style>
 </head>
 <body>
@@ -1617,6 +1786,54 @@
         <img id="modalImage" src="" alt="">
     </div>
 
+    <!-- ClawPanel 推荐 -->
+    <section class="promo-section" id="clawpanel">
+        <div class="container">
+            <div class="promo-card reveal">
+                <div class="promo-info">
+                    <div class="promo-badge">OpenClaw 生态</div>
+                    <h2>用 <span>ClawPanel</span> 管理你的 AI 助手</h2>
+                    <p class="promo-desc">
+                        OpenClaw 可视化管理面板 — 不用命令行，图形界面轻松管理。
+                        内置 AI 助手帮你诊断问题、读取配置、分析日志，新手也能快速上手。
+                    </p>
+                    <div class="promo-features">
+                        <div class="promo-feat">
+                            <div class="promo-feat-icon" style="background:rgba(59,130,246,0.12);color:var(--blue)">🤖</div>
+                            <span>AI 助手 · 8 大工具 + 4 种模式</span>
+                        </div>
+                        <div class="promo-feat">
+                            <div class="promo-feat-icon" style="background:rgba(244,63,94,0.1);color:#f43f5e">🖼️</div>
+                            <span>图片识别 · 多模态对话</span>
+                        </div>
+                        <div class="promo-feat">
+                            <div class="promo-feat-icon" style="background:rgba(34,197,94,0.12);color:var(--green)">📊</div>
+                            <span>仪表盘 · 服务状态一目了然</span>
+                        </div>
+                        <div class="promo-feat">
+                            <div class="promo-feat-icon" style="background:rgba(168,85,247,0.12);color:var(--purple)">⚙️</div>
+                            <span>模型管理 · 多厂商一键切换</span>
+                        </div>
+                    </div>
+                    <div class="promo-buttons">
+                        <a href="https://claw.qt.cool/" target="_blank" class="btn-promo btn-promo-primary">了解 ClawPanel →</a>
+                        <a href="https://github.com/qingchencloud/clawpanel/releases" target="_blank" class="btn-promo btn-promo-secondary">下载安装</a>
+                    </div>
+                </div>
+                <div class="promo-preview">
+                    <div class="promo-preview-frame">
+                        <img src="https://claw.qt.cool/00.png" alt="ClawPanel 仪表盘" loading="lazy">
+                    </div>
+                    <div class="promo-platform-tags">
+                        <span class="promo-platform-tag">🪟 Windows</span>
+                        <span class="promo-platform-tag">🍎 macOS</span>
+                        <span class="promo-platform-tag">🐧 Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 社区交流 -->
     <section class="section" id="community">
         <div class="container">
@@ -1689,6 +1906,7 @@
                 </div>
                 <div class="footer-section">
                     <h4>友情链接</h4>
+                    <a href="https://claw.qt.cool/" target="_blank">ClawPanel 管理面板</a>
                     <a href="https://openclaw.ai/" target="_blank">OpenClaw 官网</a>
                     <a href="https://github.com/openclaw/openclaw" target="_blank">OpenClaw GitHub</a>
                     <a href="https://qingchencloud.com/" target="_blank">晴辰云</a>
