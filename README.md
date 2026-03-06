@@ -52,7 +52,7 @@
 
 ## 什么是 OpenClaw？
 
-[OpenClaw](https://openclaw.ai/) 是 GitHub 195,000+ Stars 的**开源个人 AI 助手平台**。它运行在你的电脑上，通过 WhatsApp、Telegram、Discord 等聊天应用与你的 AI 助手交互，帮你处理邮件、日历、文件等日常事务。
+[OpenClaw](https://openclaw.ai/) 是 GitHub 266,000+ Stars 的**开源个人 AI 助手平台**。GitHub开源 TOP1，它运行在你的电脑上，通过 WhatsApp、Telegram、Discord 等聊天应用与你的 AI 助手交互，帮你处理邮件、日历、文件等日常事务。
 
 **本项目 = OpenClaw + 全中文界面**，CLI 命令行和 Dashboard 网页控制台均已深度汉化。
 
